@@ -1,0 +1,18 @@
+<h1>Seat Reservation</h1>
+<div>
+  <label for="numSeats">Number of Seats:</label>
+  <input type="number" id="numSeats" [(ngModel)]="numSeats" min="1" max="7" />
+  <button (click)="reserve(numSeats)">Reserve</button>
+</div>
+<div>
+  <table>
+    <tr *ngFor="let row of seatArrangement">
+      <td
+        *ngFor="let seat of row"
+        [style.backgroundColor]="seat === 'B' ? 'red' : 'green'"
+      >
+        {{ seat }}
+      </td>
+    </tr>
+  </table>
+</div>
